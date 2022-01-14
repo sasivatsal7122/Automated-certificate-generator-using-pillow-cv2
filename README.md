@@ -28,6 +28,8 @@ if __name__=="__main__":
     pillow(name_ls)
     cv_2(name_ls)
 ```
+<b>open_textfile()</b> is used to read data from names.txt (don't forget to update names.txt with you're data before running script)
+
 ## note: certificates made using Open cv are stored inside cv2 dir, same applies for PILLOW
 
 # Demo:
@@ -37,16 +39,14 @@ Intially if there are any certificates in pillow or cv2 dir are cleared/deleted 
 ### clean() demo:
 ```python
 def clean():
-       print("Cleaining........")
-       for certificates in os.listdir("result/pillow/"):
-        os.remove("result/pillow/{}".format(certificates))
-       print("done........")
+       x=input("enter folder name to clean: ")
+       print("Cleaning {} folder ........".format(str(x)))
+       for certificates in os.listdir("result/{}/".format(str(x))):
+        os.remove("result/{}/{}".format(str(x),certificates))
+       print("completed.......")
 ```
-Just in case u forgot to delete previous certificates, clean is used to remove any previous remains. <b>open_textfile()</b> is used to read data from names.txt (don't forget to update names.txt with you're data before running script)
-
-There is a small problem i couldn't rectify...
-
-U have to manually change the x in "result/x/" and "result/x/{}" with pillow if u want to clear certificates in pillow dir, same applies for cv2. ( listdir() in OS module is not supporting ".format" technique for /<folder-name> ,or i don't know how to use it properly)
+Just in case u forgot to delete previous certificates, clean is used to remove any previous remains.\
+enter name of the folder u wanted to delete certificates in and hit enter they are deleted in a snap.
 <hr style="border:10px solid grey"> </hr>
 
 ## That begin here is a quick sample created using Open CV and Pillow with Pacifico and FONT_HERSHEY_SCRIPT_COMPLEX fonts
