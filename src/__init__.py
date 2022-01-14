@@ -6,10 +6,11 @@ import os
 # DRIVER CODE FOR DELETING OLD CERRTIFICATES
 # USEFUL FOR TESTING 
 def clean():
-       print("Cleaining........")
-       for certificates in os.listdir("result/pillow/"):
-        os.remove("result/pillow/{}".format(certificates))
-       print("done........")
+       x=input("enter folder name to clean: ")
+       print("Cleaning {} folder ........".format(str(x)))
+       for certificates in os.listdir("result/{}/".format(str(x))):
+        os.remove("result/{}/{}".format(str(x),certificates))
+       print("completed.......")
 
 # FOR READING FROM TEXT FILE
 def open_textfile():
@@ -39,7 +40,7 @@ def pillow(name_ls):
             var_draw.text((1253,660),name,font=pacifico,fill='grey') # DEFINING CO-ORDS NAME AND FONT-COLOR
             final_res=cv2.cvtColor(np.array(arr_img),cv2.COLOR_RGB2BGR) # RE-CONVERTING IMAGE FROM ARRAY INFO
             cv2.imwrite("result/pillow/{}.jpg".format(name), final_res) # TO SAVE THE FINAL OUTPUT
-            print("{}'s certificate generated".format(name))
+            print("{}'s certificate generated using PILLOW".format(name))
     open_textfile()
     certificate_gen(name_ls)
 '''
@@ -51,7 +52,7 @@ def cv_2(name_ls):
       # Syntax: cv2.putText(image, text, org, font, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]])
       cv2.putText(template, name.strip(),(1123,795),cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 4, (128, 128, 128), 10)
       cv2.imwrite("result/cv2/{}.jpg".format(name.strip()),template)
-      print("{}'s certificate generated".format(name))
+      print("{}'s certificate generated using Open cv".format(name))
       
 if __name__=="__main__":
     clean()
