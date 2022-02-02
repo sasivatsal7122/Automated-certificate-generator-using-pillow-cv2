@@ -72,6 +72,10 @@ if __name__=="__main__":
         except:
             print("File not found")
             exit()
-    pillow(name_ls)
-    cv_2(name_ls)
+    print("Enter you're mode of generation \n1.PIllow\n2.OpenCV")
+    choice=int(input("Enter your choice: as (1) or (2): "))
+    if(choice)==1:
+        pillow(name_ls)
+    else:
+        cv_2(name_ls)
     
