@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from PIL import ImageFont,ImageDraw,Image
 import os
+import pandas as pd
 
 # DRIVER CODE FOR DELETING OLD CERRTIFICATES
 # USEFUL FOR TESTING 
@@ -56,7 +57,21 @@ def cv_2(name_ls):
       
 if __name__=="__main__":
     clean()
-    name_ls=open_textfile()
+
+    print('Do you want to convert contents of a text file to a list or a csv file?\n1.names.txt\n2.names.csv')
+    choice=int(input("Enter your choice: as (1) or (2): "))
+    if(choice) == 1:
+        try:
+            name_ls=open_textfile()
+        except:
+            print("Error in opening the file")
+    else:
+        try:
+            df = pd.read_csv('names.csv')
+            name_ls = df['NAMES'].tolist()
+        except:
+            print("File not found")
+            exit()
     pillow(name_ls)
     cv_2(name_ls)
     

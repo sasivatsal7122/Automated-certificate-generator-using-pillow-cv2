@@ -54,7 +54,7 @@ enter name of the folder u wanted to delete certificates in and hit enter they a
 ### In either techniques u can adjust font-weight,thickness,font-size,font-color by changing values in their respective arguments
 
 # Note:
-- As of now (1.0.0) input can only given by .txt file format, tried using pandas and xlrd for reading .csv nd .xlsx files but it didn't work out as intended.
+- As of now (1.0.1) input can be given by .txt , .csv files, To configure, run the program and select (1) to give input with .txt and select (2) to give input with .csv.(2) is default. (More filesystem support will be added in near future)
 - No other issues, everything works fine
 - place you're certificate template with name strictly "certificate.jpg", update the co-ordinates for text placement, update names.txt -- # hit run and chillax! 
 ### - Under GPL-3.0 license you are eligible to use the code how ever you want, but do not copy paste this as you're work/project anywhere , if done so it leads to copyright violation,you can avoid it by giving credit to me by linking this repo.
